@@ -7,6 +7,9 @@ fn add(p1: &Point, p2: &Point) -> Point {
     p
 }
 
+//In C++, copy elision has to be defined in the language specification because constructors can have side effects.
+//In Rust, this is not an issue at all. If RVO did not happen, Rust will always performs a simple and efficient memcpy copy.
+
 fn main() {
     let p1 = Point(3, 4);
     let p2 = Point(10, 20);
